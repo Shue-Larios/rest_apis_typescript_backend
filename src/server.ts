@@ -49,7 +49,7 @@ export async function ConnectDB() {
         await db.authenticate()
         // este sync lo que va hacer en caso de que vayamos creando nuevos modelos, nuevas columnas a la base de datos va air agregandolas  
         db.sync()
-        // console.log(colors.blue.bold("Conexion exitosa a la base de datos"))
+          console.log(colors.blue.bold("Conexion exitosa a la base de datos"))
 
     } catch (error) {
         // obtenemos un posible error
