@@ -28,7 +28,8 @@ export const getProduct = async (req: Request, res: Response) => {
 export const getProductById = async (req: Request, res: Response) => {
    try {
       // asi obtengo el valor del router dinamico
-      const { id } = req.params
+      // const { id } = req.params
+      const { id } = req.params as { id: string };
       // findByPkes para traer por primary key
       const product = await Product.findByPk(id) as Product
       // comprobando si el producto existe
@@ -75,7 +76,7 @@ export const updateProduct = async (req: Request, res: Response) => {
 
    // revisar primero que el producto exista
    // asi obtengo el valor del router dinamico
-   const { id } = req.params
+     const { id } = req.params as { id: string };
    // findByPkes para traer por primary key
    const product = await Product.findByPk(id) as Product
    // comprobando si el producto existe
@@ -98,7 +99,7 @@ export const updateProduct = async (req: Request, res: Response) => {
 export const updateAvailability = async (req: Request, res: Response) => {
    // revisar primero que el producto exista
    // asi obtengo el valor del router dinamico
-   const { id } = req.params
+  const { id } = req.params as { id: string };
    // findByPkes para traer por primary key
    const product = await Product.findByPk(id) as Product
    // comprobando si el producto existe
@@ -120,7 +121,7 @@ export const updateAvailability = async (req: Request, res: Response) => {
 export const deleteProduct = async (req: Request, res: Response) => {
    // revisar primero que el producto exista
    // asi obtengo el valor del router dinamico
-   const { id } = req.params
+  const { id } = req.params as { id: string };
    // findByPkes para traer por primary key
    const product = await Product.findByPk(id) as Product
    // comprobando si el producto existe
